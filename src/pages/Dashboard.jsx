@@ -3,10 +3,10 @@ import Header from '../components/Header.component';
 
 const Dashboard = () => {
     return (
-        <div className="dashboard-container">
-            <Header />
+        // <div className="dashboard-container">
+        //     <Header />
             <h2>body</h2>
-        </div>
+        // </div>
     );
 }
 
