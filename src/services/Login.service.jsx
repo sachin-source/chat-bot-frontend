@@ -1,7 +1,9 @@
-import React from 'react'
+import storageService from "./storage.service"
+
+const StorageService = new storageService()
 
 function LoginService() {
-    return Boolean(localStorage.getItem("adminToken"))
+    return Boolean(StorageService.get("adminToken"))
 }
 
 export {LoginService}
