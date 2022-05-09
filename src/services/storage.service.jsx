@@ -3,10 +3,19 @@ export default class storageService {
     // storage = isPersistantStorage ? localStorage : sessionStorage;
 
     constructor() {
-        if (MyClass._instance) {
-            return MyClass._instance
+        if (storageService._instance) {
+            return storageService._instance
         }
-        MyClass._instance = this;
+        storageService._instance = this;
+
+
+/**
+ * 
+ * need to do :
+ * fetching from local,
+ * setting default persistancy to session
+ * 
+ */
 
         this.isPersistantStorage = true;
         this.storage = this.isPersistantStorage ? localStorage : sessionStorage;
