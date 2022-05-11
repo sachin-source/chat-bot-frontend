@@ -6,11 +6,13 @@ export default class storageService {
         }
         storageService._instance = this;
         /**
-         * 
          * Need to do :
-         * Fetching from local,
+         * Fetching from local
+         */
+        
+        /**
+         * Done with :
          * Setting default persistancy to session
-         * 
          */
 
         this.isPersistantStorage = false;
