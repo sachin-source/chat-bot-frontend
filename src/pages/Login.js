@@ -1,13 +1,10 @@
+import loginService from "../services/Login.service";
 
-// export default function Login(){
-//     return (<div>sfsdfgsdfg</div>)
-
-import storageService from "../services/storage.service";
-
-// }
-const StorageService = new storageService()
+const LoginService = new loginService()
 
 const Login = ({loginStatus, setLoginStatus}) => {
+    // { isLoggedIn: false, userInfo: { username: '', _id: '', email: '' } }
+    setLoginStatus(LoginService.isLoggedIn)
     return (
         <div className="login-page">
             <h4> Login </h4>
