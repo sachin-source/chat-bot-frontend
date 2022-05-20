@@ -12,16 +12,19 @@ import {
   Route
 } from "react-router-dom";
 import Header from './components/Header.component';
+import loginService from './services/Login.service';
 
+const LoginService = new loginService()
 function App() {
-  const [loginStatus, setLoginStatus] = useState({ isLoggedIn: false, userInfo: { username: '', _id: '', email: '' } });
+  const [loginStatus, setLoginStatus] = useState({ isLoggedIn: false, userInfo: { username: '', email: '' } });
+  // setLoginStatus({ isLoggedIn : LoginService.isLoggedIn, userInfo : LoginService.userInfo})
   return (
     <Router>
       <div className="dashboard-container">
-        <Header />
+        <Header loginStatus={loginStatus} setLoginStatus={setLoginStatus} />
       </div>
       <Routes>
-        <Route path="/login" element={<Login loginStatus={loginStatus} setLoginStatus={setLoginStatus} />} />
+        <Route path="/login" element={ <Login loginStatus={loginStatus} setLoginStatus={setLoginStatus} />} />
         <Route path="/" element={<Dashboard />} />
       </Routes>
     </Router>
