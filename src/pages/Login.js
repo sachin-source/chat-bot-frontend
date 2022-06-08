@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 const LoginService = new loginService()
 
 const Login = ({loginStatus, setLoginStatus}) => {
-    useEffect(() => {
-        setLoginStatus({ isLoggedIn : LoginService.isLoggedIn, userInfo : LoginService.userInfo})
-    },[loginStatus])
+    // useEffect(() => {
+    //     setLoginStatus({ isLoggedIn : LoginService.isLoggedIn, userInfo : LoginService.userInfo})
+    // },[loginStatus])
     // { isLoggedIn: false, userInfo: { username: '', _id: '', email: '' } }
     // setLoginStatus({ isLoggedIn : LoginService.isLoggedIn, userInfo : LoginService.userInfo})
     return (

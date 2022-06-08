@@ -11,9 +11,17 @@ export default class loginService {
             return loginService._instance
         }
         loginService._instance = this;
+    }
+    getAuthenticationStatus(callback){
+        while(!this.authenticationChecked);
+        callback(this.isLoggedIn, this.userInfo)
+    }
+    adminAuthentication(callback=()=>{}){
         HttpService.getApiResponse({ url : "admin-api/auth", params : {}, headers : {}}, (err, response) => {
             this.isLoggedIn = Boolean(response?.status);
             this.userInfo = response.userInfo;
+            this.authenticationChecked = true
+            callback({ isLoggedIn : this.isLoggedIn, userInfo : this.userInfo })
         })
     }
 }

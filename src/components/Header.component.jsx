@@ -6,8 +6,11 @@ const LoginService = new loginService()
 
 function Header({ loginStatus, setLoginStatus }) {
   useEffect(() => {
-    setLoginStatus({ isLoggedIn: LoginService.isLoggedIn, userInfo: LoginService.userInfo })
-  }, [loginStatus])
+    LoginService.adminAuthentication(({ isLoggedIn, userInfo })=>{
+      console.log({ isLoggedIn, userInfo })
+      setLoginStatus({ isLoggedIn: isLoggedIn, userInfo: userInfo })
+    })
+  }, [])
   return (
     <header>
       <div className="header-container">
