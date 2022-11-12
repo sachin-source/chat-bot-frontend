@@ -1,0 +1,21 @@
+.navbar-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.body {
+    color: rgb(0, 0, 0);
+}
+
+.left h2{
+    display: flex;
+    justify-content: space-between;
+}
+
+.right {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
